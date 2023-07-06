@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Array Methods</title>
+</head>
+
+<body>
+    <script>
+
+        // FOR EACH METHOD
+
+        const numbers = [1, 2, 3, 4]
+        const poweredNumbers = []
+
+        numbers.forEach(number => poweredNumbers.push(number ** 2))
+
+        // console.log(poweredNumbers)
+
+        const forEachValue = numbers.forEach(number => poweredNumbers.push(number * 2))
+
+        // console.log(forEachValue) // undefined ???
+
+        // // MAP METHOD --> same length array
+
+        const multipliedNumbers = numbers.map(number => number * 2)
+        // // console.log(multipliedNumbers)
+        // // console.log("ESTE ES EL ARRAY ORIGINAL =>", numbers)
+
+
+        // IN-SITU / DESTRUCTIVE FUNCTIONS, None of this methods are destructive/in-place functions
+
+        const animals = ['dog', 'cow', 'hyena']
+
+        animals.pop()  // destructive, in-situ function
+        // // console.log(animals)
+
+        // FILTER METHOD
+
+        const filteredNumbers = numbers.filter(number => number % 2 === 0)
+        // // console.log(filteredNumbers)
+
+        const students = [
+            { name: 'Candice', age: 25 },
+            { name: 'Tammy', age: 30 },
+            { name: 'Dan', age: 20 },
+            { name: 'Nettie', age: 21 },
+            { name: 'Stuart', age: 17 },
+            { name: 'Bill', age: 19 }
+        ];
+
+        // // const userInput = prompt('What is your search: ')
+
+        const legitDrinkers = people.filter(({ age }) => age > 20)
+
+        // // console.log(legitDrinkers)
+
+        const places = [
+            {
+                title: "Awesome Suite 20' away from la Rambla",
+                price: 200,
+                type: 'Private Room',
+                pool: true,
+                garage: false
+            },
+            {
+                title: 'Private apartment',
+                price: 190,
+                type: 'Entire Place',
+                pool: true,
+                garage: true
+            },
+            {
+                title: 'Apartment with awesome views',
+                price: 400,
+                type: 'Entire Place',
+                pool: false,
+                garage: false
+            },
+            {
+                title: 'Apartment in la Rambla',
+                price: 150,
+                type: 'Private Room',
+                pool: false,
+                garage: true
+            },
+            {
+                title: 'Comfortable place in Barcelona´s center',
+                price: 390,
+                type: 'Entire place',
+                pool: true,
+                garage: true
+            },
+            {
+                title: 'Room near Sagrada Familia',
+                price: 170,
+                type: 'Private Room',
+                pool: false,
+                garage: false
+            },
+            {
+                title: 'Great house next to Camp Nou',
+                price: 140,
+                type: 'Entire place',
+                pool: true,
+                garage: true
+            },
+            {
+                title: 'New apartment with 2 beds',
+                price: 2000,
+                type: 'Entire place',
+                pool: false,
+                garage: true
+            },
+            {
+                title: 'Awesome Suite',
+                price: 230,
+                type: 'Private Room',
+                pool: false,
+                garage: false
+            },
+            {
+                title: "Apartment 10' from la Rambla",
+                price: 930,
+                type: 'Entire place',
+                pool: true,
+                garage: true
+            }
+        ];
+
+        // REDUCE: acc, current
+
+        const people = [
+            { name: 'Candice', age: 25 },
+            { name: 'Tammy', age: 30 },
+            { name: 'Allen', age: 49 },
+            { name: 'Nettie', age: 21 },
+            { name: 'Stuart', age: 17 }
+        ];
+
+        const ageAverage = people.reduce((acc, current) => {
+            return acc + current.age
+        }, 0) / people.length
+
+        // console.log("LA EDAD MEDIA => ", ageAverage)
+
+        // AMAZON REVIEWS EXAMPLE
+
+        const product = {
+            name: 'AmazonBasics Apple Certified Lightning to USB Cable',
+            price: 7.99,
+            manufacturer: 'Amazon',
+            reviews: [
+                { user: 'Pavel Nedved', comments: 'It was really useful, strongly recommended', rate: 5 },
+                { user: 'Alvaro Trezeguet', comments: 'It lasted 2 days', rate: 5 },
+                { user: 'David Recoba', comments: 'Awesome', rate: 5 },
+                { user: 'Jose Romero', comments: 'Good value for money', rate: 5 },
+                { user: 'Antonio Cano', comments: 'It broked really fast', rate: 5 }
+            ]
+        };
+
+        // LA NOTA MEDIA DE LAS REVIEWS de los PRODUCTOS
+
+        // const { reviews } = product
+        // const reviewsSum = reviews.reduce((acc, current) => acc + current.rate, 0)
+        // const reviewsAvg = reviewsSum / reviews.length
+        // // console.log(reviewsAvg)
+
+        // const intAvg = Math.floor(reviewsAvg) // 3
+        // // console.log(intAvg)
+
+        // let starRating = '' // ⭐
+        // // let starRating = '⭐'.repeat(intAvg) // ⭐
+
+        // // switch (intAvg) {
+        // //     case 1:
+        // //         starRating = "⭐"
+        // //         break
+        // //     case 2:
+        // //         starRating = "⭐"
+        // //         break
+        // //     case 3:
+        // //         starRating = "⭐"
+        // //         break
+        // //     case 4:
+        // //         starRating = "⭐"
+        // //         break
+        // //     case 5:
+        // //         starRating = "⭐"
+        // //         break
+        // // }
+
+        // console.log(starRating)
+
+        // IN-SITU DESTRUCTIVE ARRAY METHODS SORT
+
+        // SORT METHOD
+
+        // const unorderedLetters = ['z', 'f', 'c', 'a']
+        // // console.log(unorderedLetters)
+        // // unorderedLetters.forEach(letter => console.log(letter.charCodeAt()))
+        // const orderedList = unorderedLetters.sort()
+        // // console.log(orderedList)
+        // // console.log(unorderedLetters)
+
+        // const ages = [0, 10]
+        // // console.log(ages.sort((a, b) => a - b)) // ???
+
+        // // console.log(ages)
+        // // ages.sort((b, a) => {
+        // //     console.log(`ESTE ES A: ${a}`, `ESTE ES B: ${b}`)
+        // //     console.log(b - a)
+        // //     return b - a
+        // // })
+        // // console.log(ages)
+        // // 7, 20, 44, 88
+
+        // const words = ['aippopotamusamphibius', 'hippopotamusamphibiuz', 'app', 'koala']
+
+        // // words.sort((b, a) => {
+        // //     console.log(b, a)
+        // //     console.log(b.length - a.length)
+        // //     return b.length - a.length // > 0, sort b after a
+        // //     // return a.length - b.length // < 0, sort b before a
+        // // })
+
+        // // console.log(words)
+
+        // SHALLOW COPIES vs DEEP COPIES
+
+        // // const numbers = [1, 2, 3, [4, 5]]
+        // // // const _numbers = [...numbers] // SHALLOW COPY
+        // // const _numbers = JSON.parse(JSON.stringify(numbers)) // DEEP COPY
+        // // numbers[3][0] = 'Jejejeje'
+        // // console.log("EL ORIGINAL =>", numbers)
+        // // console.log("LA COPIA =>", _numbers)
+    </script>
+</body>
+
+</html>
