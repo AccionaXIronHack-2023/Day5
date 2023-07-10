@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // const numbers = [1, 2, 3, 4] // [1,4,9,16]
+
+        // numbers.forEach(number => poweredNumbers.push(number ** 2))
+
+        // const poweredNumbers = numbers.map(number => number ** 2)
+        // console.log(poweredNumbers)
+
+        // const favoriteCharacters = ["Hinata", "Ippo", "Kaneki", "Levi", "Thorfinn"]
+        // const charactersCopy = structuredClone(favoriteCharacters)
+        // favoriteCharacters[2] = "Kuroko"
+
+        // console.log(favoriteCharacters)
+        // console.log("COPIA PRÍSTINA =>", charactersCopy)
+
+        // FILTER
+
+        // const students = [
+        //     { name: 'Candice', age: 25 },
+        //     { name: 'Tammy', age: 30 },
+        //     { name: 'Dan', age: 20 },
+        //     { name: 'Nettie', age: 21 },
+        //     { name: 'Stuart', age: 17 },
+        //     { name: 'Bill', age: 19 }
+        // ];
+
+        // const adults = students.filter(student => student.age >= 21)
+
+        // console.log(adults)
+
+        // const places = [
+        //     {
+        //         title: "Awesome Suite 20' away from la Rambla",
+        //         price: 200,
+        //         type: 'Private Room',
+        //         pool: true,
+        //         garage: false
+        //     },
+        //     {
+        //         title: 'Private apartment',
+        //         price: 190,
+        //         type: 'Entire Place',
+        //         pool: true,
+        //         garage: true
+        //     },
+        //     {
+        //         title: 'Apartment with awesome views',
+        //         price: 400,
+        //         type: 'Entire Place',
+        //         pool: false,
+        //         garage: false
+        //     },
+        //     {
+        //         title: 'Apartment in la Rambla',
+        //         price: 150,
+        //         type: 'Private Room',
+        //         pool: false,
+        //         garage: true
+        //     },
+        //     {
+        //         title: 'Comfortable place in Barcelona´s center',
+        //         price: 390,
+        //         type: 'Entire place',
+        //         pool: true,
+        //         garage: true
+        //     },
+        //     {
+        //         title: 'Room near Sagrada Familia',
+        //         price: 170,
+        //         type: 'Private Room',
+        //         pool: false,
+        //         garage: false
+        //     },
+        //     {
+        //         title: 'Great house next to Camp Nou',
+        //         price: 140,
+        //         type: 'Entire place',
+        //         pool: true,
+        //         garage: true
+        //     },
+        //     {
+        //         title: 'New apartment with 2 beds',
+        //         price: 2000,
+        //         type: 'Entire place',
+        //         pool: false,
+        //         garage: true
+        //     },
+        //     {
+        //         title: 'Awesome Suite',
+        //         price: 230,
+        //         type: 'Private Room',
+        //         pool: false,
+        //         garage: false
+        //     },
+        //     {
+        //         title: "Apartment 10' from la Rambla",
+        //         price: 930,
+        //         type: 'Entire place',
+        //         pool: true,
+        //         garage: true
+        //     }
+        // ];
+
+        // ericPools = places.filter(house => !house.pool)
+        // console.log("Holi =>", ericPools)
+
+        // REDUCE
+
+        // const prices = [1, 2, 3]
+        // let multiplication = prices.reduce((acc, curr) => acc * curr)
+        // console.log("LA MULTIPLICACION REDUCIDA =>", multiplication)
+
+
+        // const people = [
+        //     { name: 'Candice', age: 25 },
+        //     { name: 'Tammy', age: 30 },
+        //     { name: 'Allen', age: 49 },
+        //     { name: 'Nettie', age: 21 },
+        //     { name: 'Stuart', age: 17 }
+        // ];
+
+        // const sum = people.reduce((acc, curr) => acc + curr.age, 0)
+        // console.log("LA SUMA =>", sum)
+
+        const product = {
+            name: 'El huevo de Kuromi',
+            price: 200,
+            manufacturer: 'Amazon',
+            reviews: [
+                { user: 'Pavel Nedved', comments: 'So edgy', rate: 5 },
+                { user: 'Alvaro Trezeguet', comments: 'It lasted 2 days', rate: 2 },
+                { user: 'David Recoba', comments: 'Awesome', rate: 5 },
+                { user: 'Jose Romero', comments: 'Good value for money', rate: 5 },
+                { user: 'Antonio Cano', comments: 'It broked really fast', rate: 5 }
+            ]
+        };
+
+        const { reviews } = product
+
+        const totalRating = reviews.reduce((acc, curr) => acc + curr.rate, 0)
+        const ratingsAverage = totalRating / reviews.length
+        // console.log("LA MEDIA ༼ つ ◕_◕ ༽つ", ratingsAverage)
+
+        if (Math.round(ratingsAverage) === 1) console.log("⭐")
+        if (Math.round(ratingsAverage) === 2) console.log("⭐⭐")
+        if (Math.round(ratingsAverage) === 3) console.log("⭐⭐⭐")
+        if (Math.round(ratingsAverage) === 4) console.log("⭐⭐⭐⭐")
+        if (Math.round(ratingsAverage) === 5) console.log("⭐⭐⭐⭐⭐")
+
+        // SORT, REVERSE 
+        // const numbers = [5, 1, 4, 7]
+        // numbers.sort((a, b) => {
+        //     console.log("QUIEN ES A =>", a)
+        //     console.log("QUIEN ES B =>", b)
+        //     return b - a
+        // })
+
+        // console.log("LOS NUMEROS =>", numbers)
+
+        const words = ['aippopotamusamphibius', 'hippopotamusamphibiuz', 'app', 'koala']
+        words.sort((a, b) => b.length - a.length)
+        console.log(words)
+
+    </script>
+</body>
+
+</html>
